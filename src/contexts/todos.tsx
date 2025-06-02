@@ -68,9 +68,9 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
   }, []);
 
   const addTodo = useCallback((todo: Todo) => {
-    setTodos((todos: Todo[]) => {
+    setTodos(() => {
       const localStorageTodos: Todo[] = JSON.parse(
-        localStorage.getItem("todos") || `${todos}`
+        localStorage.getItem("todos") || "[]"
       );
       localStorage.setItem(
         "todos",

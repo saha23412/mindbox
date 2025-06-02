@@ -1,4 +1,4 @@
-import { it, expect, descrive, describe } from "vitest";
+import { it, describe } from "vitest";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../../src/constants/theme.ts";
 import { TodoProvider } from "../../src/contexts/todos.tsx";
