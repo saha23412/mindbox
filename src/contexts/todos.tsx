@@ -72,9 +72,11 @@ export const TodoProvider: React.FC<TodoProviderProps> = ({ children }) => {
       const localStorageTodos: Todo[] = JSON.parse(
         localStorage.getItem("todos") || "[]"
       );
+      const checkLocalStorage =
+        localStorageTodos.length > 0 ? localStorageTodos : todos;
       localStorage.setItem(
         "todos",
-        JSON.stringify([...localStorageTodos, todo])
+        JSON.stringify([...checkLocalStorage, todo])
       );
       return [...localStorageTodos, todo];
     });
